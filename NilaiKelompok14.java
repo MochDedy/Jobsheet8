@@ -4,8 +4,8 @@ public class NilaiKelompok14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int i, j, nilai;
-        float totalNilai, rataNilai;
+        int i, j, nilai, kelompokTertinggi = 0;
+        float totalNilai, rataNilai, maxRata = 0;
 
         System.out.println("==== Program Penilaian Tugas Kelompok ====");
         System.out.println("Terdapat 6 kelompok dalam 1 kelas");
@@ -24,7 +24,15 @@ public class NilaiKelompok14 {
             }
             rataNilai = totalNilai / 5;
             System.out.println("Rata-rata nilai Kelompok" + i + "= " + rataNilai);
+
+            if (rataNilai > maxRata) {
+                maxRata = rataNilai;
+                kelompokTertinggi = i;
+            }
             i++;
         }
+
+        System.out.println("\nKelompok dengan rata-rata tertinggi adalah Kelompok: " + kelompokTertinggi);
+        System.out.println("Dengan rata-rata nilai: " + maxRata);
     }
 }
